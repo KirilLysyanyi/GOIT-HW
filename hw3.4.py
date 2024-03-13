@@ -25,12 +25,12 @@ def prepare_users(users):
             print(f'Некоректна дата народження для користувача {user["name"]}')
     return prepared_users
 
-def get_upcoming_birthdays(prepared_users):
+def get_upcoming_birthdays(users):
     days = 7
     today = datetime.today().date()
     upcoming_birthdays = []
 
-    for user in prepared_users:
+    for user in users:
         birthday_this_year = user["birthday"].replace(year=today.year)
 
         if birthday_this_year < today:
